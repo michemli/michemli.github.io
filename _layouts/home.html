@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    /* Float four columns side by side */
+    .column {
+      float: left;
+      width: 50%;
+      padding: 0 10px;
+    }
+    
+    /* Remove extra left and right margins, due to padding */
+    .row {margin: 0 -5px;}
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Responsive columns */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+    
+    /* Style the counter cards */
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 16px;
+      text-align: center;
+      background-color: #f1f1f1;
+    }
+    </style>
+  <body>
+
+    <div>
+
+      <header class="header-background">
+
+        <div class="clearfix border-bottom-thick header-border">
+          <ul class="list-reset right py-1 header-text font-smoothing">
+            {% for my_page in site.pages %}
+              {% if my_page.title %}
+              <li class="inline-block">
+                <a class="align-middle link-primary header-link mr-2" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+              </li>
+              {% endif %}
+            {% endfor %}
+            <li class="inline-block">
+              <a class="align-middle link-primary header-link mr-2" 
+              href="https://drive.google.com/file/d/1RwUujnvwYSQzlWP56lNHmD5ruzJ9CZbi/view?usp=sharing">Resume</a> 
+            </li>
+          </ul>
+        </div>
+
+        <div class="container mx-auto px-2 mb-0 clearfix header-text">
+          <h1 class="h2 inline-block col-9 sm-width-full mt-3 header-title" 
+          style="padding-top: 64px; padding-bottom: 10px"
+          >
+            Michelle is an interaction designer studying CS and Art at Yale. 
+            Currently, at <u><a href="https://www.dreamkitapp.com/">DreamKit</a></u> empowering unstably housed youth.
+          </h1>
+
+          
+          <p class="h4 lh-condensed font-smoothing mt-2 py-1" style="padding-bottom: 100px;">
+            <a href="https://www.linkedin.com/in/michmli/"><u>LinkedIn</u></a> 🞄 <a href="mailto:michelle.m.li@yale.edu">michelle.m.li@yale.edu</a></p>               
+
+        </div>
+      </header>
+      
+      <!-- coursetable -->
+      <div class="container mx-auto px-2 py-2">
+        <h4 class="h4 lh-condensed font-smoothing mt-2" style="padding-top: 20px; padding-bottom: 20px;">
+          Selected Projects</h4>
+
+        <div class="row">
+          <div class="column">
+            <h3><a href="https://www.notion.so/CourseTable-00e06635bd274aa78bfd484f4c159547">CourseTable</a></h3>
+            <p style="padding-right: 25px;">Led re-design of course discovery site actively used by over 5,900 students at Yale. Supported
+              team of engineers for launch in October 2020.
+            </p>
+            <p>Tags: web, browsing/searching, marketplace</p>
+            <p><a href="https://www.notion.so/CourseTable-00e06635bd274aa78bfd484f4c159547">
+              <i><b>Read More</b></i></a>
+            </p>
+
+          </div>
+          <div class="column">
+            <a href="https://www.notion.so/CourseTable-00e06635bd274aa78bfd484f4c159547"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/89bef054-451f-45e4-b8f7-8f4bdb5cf0fa/splash-2Y.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210121T212053Z&X-Amz-Expires=86400&X-Amz-Signature=8f1ef4ff08b48c4c7d93b8000bbe6e7427b51d179f6d5d6894c46fcab3c1fb83&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22splash-2Y.png%22"
+              alt="CourseTable" style="width: 600px; padding-top: 20px;"></a></div>
+          </div>          
+        
+        <br>
+        
+        <!-- dreamkit -->
+        <div class="row">
+          <div class="column">
+            <h3><a href="https://www.notion.so/DreamKit-edb1bc10babc497fa969b20f617d3e94">DreamKit</a></h3>
+            <p>Designed mobile app to resource youth experiencing housing insecurity. Working with developers for release in 2021.
+            </p>
+            <p>Tags: mobile, branding, nonprofit</p>
+            <p><a href="https://www.notion.so/DreamKit-edb1bc10babc497fa969b20f617d3e94">
+              <i><b>Read More</b></i></a>
+            </p>
+
+          </div>
+          <div class="column">
+            <a href="https://www.notion.so/DreamKit-edb1bc10babc497fa969b20f617d3e94"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7dbab223-8c85-4d5b-8034-8b1269f4ac1e/splash-3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210121T214237Z&X-Amz-Expires=86400&X-Amz-Signature=da1f2dd235d0553824dffbc9bf7fa5780b038ae05afe193ec0bedb49cafe5162&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22splash-3.png%22"
+              alt="DreamKit" style="width: 600px"></a></div>
+          </div>   
+
+    <h3 class="h3 lh-condensed font-smoothing mt-2 py-1">
+      <a href="https://minzhi.li/">Visual Art, Etc. ↗</a></h3>    
+    {% include footer.html %}
+
+  </body>
+
+</html>
